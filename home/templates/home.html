@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+
+</head>
+<body>
+
+    <nav>
+    <ul>
+        <li>
+            <a href="http://127.0.0.1:8000/accounts/login/">Entar</a>
+        <li><a href="http://127.0.0.1:8000/accounts/signup/">cadastrar-se</a>
+    </ul>
+    </nav>
+
+    <h1>Bem-Vindo ao Site da ECONOPOWER, um projeto desenvolvido por alunos do IFTO Campus Colinas do Tocantins</h1>
+
+    <img src="{% static 'img/EconoPower_Hardware.png' %}" alt="Hardware desenvolvido no projeto EconoPower" sizes="">
+
+    <footer>
+        <p class="main">
+            2023 © EconoPower <a href="#" target="_blank">EconoPower</a>
+        </p>
+    </footer>
+</body>
+</html>
