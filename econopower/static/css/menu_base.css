@@ -1,0 +1,15 @@
+.div_menu_padrao{
+    inline-size: 80%;                                   /*  comprimento da box */
+    margin-left: 20%;                                   /*  distacia da box em relacao a esquerda */
+    background-color: lightgrey;                      /*  cor da box */
+    border-radius: 15px;                                /*  quão redondo as bordas da box serão */
+    text-align: left;                                   /*  alinhamento do texto dentro box */
+    text-indent: 20px;                                  /*   */
+    padding-top: 10px;                                  /*  distancia que texto dentro da box ficara da parte superior */
+    padding-left: 0px;                                 /*  distancia que texto dentro da box ficara da parte direita */
+    padding-right: 0px;                                 /*  distancia que texto dentro da box ficara da parte direita */
+    padding-block: 20px;                                /*  Altura da box */
+}
+.nav_menu_padrao{
+    background-color: grey;
+}

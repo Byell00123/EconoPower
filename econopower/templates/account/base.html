@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock head_title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu_base.css' %}"></link>
+    {% block extra_head %}
+    {% endblock extra_head %}
+  </head>
+  <body>
+    {% block body %}
+
+    {% if messages %}
+    <div>
+      <strong>{% trans "Messages:" %}</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="div_menu_padrao">
+      <nav class="nav_menu_padrao">
+        <strong>{% trans "Menu:" %}</strong>
+        <ul>
+          {% if user.is_authenticated %}
+          <p>Voce esta logado</p>
+          <a href="{% url 'pagina_home' %}">{% trans "Home" %}</a>
+          <a href="{% url 'account_email' %}">Mudar o e-mail</a>
+          <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+          
+          {% else %}
+          <p>Voce não esta logado</p>
+          <a href="{% url 'pagina_home' %}">{% trans "Home" %}</a>
+          <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+          <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    {% block content %}
+    {% endblock content %}
+    {% endblock body %}
+    {% block extra_body %}
+    {% endblock extra_body %}
+  </body>
+</html>
