@@ -1,0 +1,91 @@
+.borda{
+    border: solid 1px red;
+}
+.bg_gray{
+    background-color: #181818;
+}
+.titulo{
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    color: rgb(26, 226, 8);
+}
+.box_card{
+    top: 100px;
+    left: 100px;
+}
+.box_p{
+    display: block;
+    background-color: white;
+    color: #202020;
+    margin-top: -291px;
+    margin-left: 630px;
+    padding: 20px;
+    width: 500px;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+.sidebar {
+    width: 15%;
+    float: left;
+    height: 1%;
+    padding: 10px 10px 30px 10px;
+    background-color: rgb(20,20,20);
+    color: white;
+    margin-left: 0px;
+}
+.sidebar_header{
+    width: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+    left: 0px;
+    padding: 0px;
+}
+.logo_img{
+    width: 35px;
+    min-height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.logo_img:hover{
+    transform: scale(1.5);
+}
+.sidebar a{
+    color: white;
+    text-decoration: none;
+    height: 60px;
+    width: 100%;
+    background: transparent;
+    border: 0px;
+    border-radius: 30px;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+.sidebar button{
+    margin-top: 7px;
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    border: 0px;
+    border-radius: 30px;
+    font-family: inherit;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+.sidebar button > a{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 16px 0 12px;
+}
+.sidebar button:hover{
+    background-color: rgb(30, 30, 30);
+}

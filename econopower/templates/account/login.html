@@ -3,42 +3,67 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}EconoPower-Login{% endblock head_title %}
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<!--===============================================================================================-->
+<!--<link rel="icon" type="image/png" href="{% static '/favicon/login-cadastro/favicon.ico' %}"/>-->
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/bootstrap/css/bootstrap.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href=" {% static 'font/login-cadastro/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'font/login-cadastro/Linearicons-Free-v1.0.0/icon-font.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/animate/animate.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/css-hamburgers/hamburgers.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/animsition/css/animsition.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/select2/select2.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/daterangepicker/daterangepicker.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/util.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/main.css' %}"/>
+<!--===============================================================================================-->
+
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
-
-{% get_providers as socialaccount_providers %}
-
-{% if socialaccount_providers %}
-<p>{% with site.name as site_name %}Faça Login em sua conta {{ site_name }}. Ou, <a href="{{ signup_url }}">Crie</a>
-uma conta {{ site_name }} :{% endwith %}</p>
-
-<div>
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+<div class="conteudo">
+  
+  <h1>{% trans "Sign In" %}</h1>
+  {% get_providers as socialaccount_providers %}
+  
+  {% if socialaccount_providers %}
+  <p>{% blocktrans with site.name as site_name %}Please sign in with one
+  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+  for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+  
+  <div class="socialaccount_ballot">
+  
+    <ul class="socialaccount_providers">
+      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
+  
+    <div class="login-or">{% trans 'or' %}</div>
+  
+  </div>
+  
+  {% include "socialaccount/snippets/login_extra.html" %}
+  
+  {% else %}
+  <p>{% with site.name as site_name %}Faça Login em sua conta {{ site_name }}. Ou,
+    <a href="{{ signup_url }}">Crie</a> uma conta {{ site_name }} :{% endwith %}</p>
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
-</div>
-
-<div class="socialaccount_ballot">
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
-</div>
-{% include "socialaccount/snippets/login_extra.html" %}
-{% else %}
-<p> oi </p>
-{% endif %}
-
-{% comment %}
-  formulario estava aqui
-{% endcomment %}
+  
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  </form>
 
 {% endblock content %}

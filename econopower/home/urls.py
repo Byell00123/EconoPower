@@ -3,6 +3,6 @@ from .import views
 
 urlpatterns =[
     path('', views.home, name='pagina_home'),
-    # path('home1/', views.home1, name='pagina_home1'),
+    path('teste/', views.teste, name='tetelogin'),
     # path('home2/', views.home2, name='pagina_home2'),
 ]

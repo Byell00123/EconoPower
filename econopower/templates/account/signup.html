@@ -1,33 +1,34 @@
 {% extends "account/base.html" %}
-
+{% load static %}
 {% load i18n %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
+
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-<mark>você esta no account_signup</mark>
 
-<p>Já tem uma conta? Faça o <a href="{{ login_url }}">Login</a>.</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
-<div class="socialaccount_ballot">
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="signup" %}
-  </ul>
+<div class="conteudo">
+  <h1>{% trans "Sign Up" %}</h1>
+  <mark>você esta no account_signup</mark>
+  
+  <p>Já tem uma conta? Faça o <a href="{{ login_url }}">Login</a>.</p>
+  
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  </form>
+  
+  <div class="socialaccount_ballot">
+    <ul class="socialaccount_providers">
+      {% include "socialaccount/snippets/provider_list.html" with process="signup" %}
+    </ul>
+  </div>
 </div>
-{% comment %}
-  {% include "socialaccount/snippets/login_extra.html" %}
-{% endcomment %}
-
 
 
 {% endblock content %}

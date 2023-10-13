@@ -6,7 +6,7 @@
     text-align: left;                                   /*  alinhamento do texto dentro box */
     text-indent: 20px;                                  /*   */
     padding-top: 10px;                                  /*  distancia que texto dentro da box ficara da parte superior */
-    padding-left: 0px;                                 /*  distancia que texto dentro da box ficara da parte direita */
+    padding-left: 0px;                                 /*  distancia que texto dentro da box ficara da parte esquerda */
     padding-right: 0px;                                 /*  distancia que texto dentro da box ficara da parte direita */
     padding-block: 20px;                                /*  Altura da box */
 }
