@@ -128,6 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/'
+#AUTHENTICATION_FORM = 'econopower_core.forms.LoginFormatado'
 
 LANGUAGE_CODE = 'pt-br'
 

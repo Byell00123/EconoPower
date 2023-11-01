@@ -1,6 +1,9 @@
 
-/* .btn-google m-b-20*/
+.qw {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -36,7 +39,7 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+	/* font-family: Poppins-Regular, sans-serif; */
 }
 
 /*---------------------------------------------*/
@@ -223,7 +226,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  width: 100%; /* para adicionar outro botão é só mudar para --> calc((100% - 20px) / 2) e adicionar o botão vo html */
+  width: 100%; /* para adicionar outro botão é só mudar para --> calc((100% - 20px) / 2) e adicionar o botão no html */
   height: 70px;
   border-radius: 10px;
   box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);

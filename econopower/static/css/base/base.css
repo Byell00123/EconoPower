@@ -1,0 +1,95 @@
+/* html body{
+    background-color: green;
+    color: white;
+} 
+.conteudo{
+    margin-left: 18%;
+    margin-top: 5%;}
+    
+    background-image: url(/static/img/EconoPower_Hardware.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+ */ 
+ /* Codigo */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  margin: 0;/**/
+}
+.navbar {
+  position: fixed;
+  top: 05%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+.navbar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navbar ul li {
+  font-family: 'Source Sans Pro';/**/
+  list-style: none;
+  display: inline-block;
+  /* oveflow: hidden; */
+}
+.navbar ul li a {
+  font-family: 'Source Sans Pro';/**/
+  display: block;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  transform: translateX(-15%);
+  border-radius: 50px;
+  width: 130%;
+  text-align: center;
+  transition-duration: 0.25s;
+}
+.navbar ul li a:hover {
+  color: white;
+}
+.navbar ul li.active a {
+  color: white;
+}
+.navbar ul li:nth-child(1) a {
+  background-color: #69AF23;
+}
+.navbar ul li:nth-child(2n) a {
+  background-color: #008737;
+}
+.navbar ul li:nth-child(3n) a {
+  background-color: #FFC300;
+}
+.navbar ul li:nth-child(4n) a {
+  background-color: #E62D87;
+}
+.navbar ul li:nth-child(5n) a {
+  background-color: #552382;
+}
+.navbar .dot {
+  background-color: red;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  border-radius: 50%;
+  transition-duration: 0.5s;
+}

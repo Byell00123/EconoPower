@@ -1,18 +1,137 @@
-{% extends "account/base.html" %}
+{% comment %} {% extends "account/base.html" %} {% endcomment %}
 {% load static %}
 {% load i18n %}
+{% load account socialaccount %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
-
+<!--===============================================================================================-->
+<!--<link rel="icon" type="image/png" href="{% static '/favicon/login-cadastro/favicon.ico' %}"/>-->
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/bootstrap/css/bootstrap.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href=" {% static 'font/login-cadastro/font-awesome-4.7.0/css/font-awesome.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'font/login-cadastro/Linearicons-Free-v1.0.0/icon-font.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/animate/animate.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/css-hamburgers/hamburgers.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/animsition/css/animsition.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/select2/select2.min.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/daterangepicker/daterangepicker.css' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/util.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/main.css' %}"/>
+<!--===============================================================================================-->
 
 {% block content %}
 
 <div class="conteudo">
-  <h1>{% trans "Sign Up" %}</h1>
-  <mark>você esta no account_signup</mark>
+
+  <div class="limiter">
+    {% get_providers as socialaccount_providers %}
+		<div class="container-login100" style="background-image: url('{% static "img/login-cadastro/bg-01.jpg" %}');">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="{% url 'account_signup' %}">{% csrf_token %}
+					<span class="login100-form-title p-b-53">
+						Cadastrar-se com
+					</span>
+					{% include "socialaccount/snippets/provider_list.html" with process="login" %}
+          
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Nome de Usuário</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">{{ form.username }}
+						<span class="focus-input100"></span>
+					</div>
+          
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Seu Nome</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "First name is required">{{ form.first_name }}
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Seu Sobrenome</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Last name is required">{{ form.last_name }}
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Senha</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">{{ form.password1 }}
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Senha</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">{{ form.password2 }}
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-31 p-b-9">
+						<span class="txt1">Email</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Email is required">{{ form.email }}
+						<span class="focus-input100"></span>
+					</div>
+					
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn" type="submit">Cadastrar</button>
+					</div>
+          
+					<div class="w-full text-center p-t-55">
+						<span class="txt2">Ja tem uma conta?</span>
+
+						<a href="{% url 'account_login' %}" class="txt2 bo1">
+							Entrar agora.
+						</a>
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+	
+
+
+	<div id="dropDownSelect1"></div>
+
+</div>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'vendor/login-cadastro/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/daterangepicker/moment.min.js' %}"></script>
+<script src="{% static 'vendor/login-cadastro/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'vendor/login-cadastro/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+<script src="{% static 'js/login-cadastro/main.js' %}"></script>
+
+  {% comment %} <h1 class"qw">{% trans "Sign Up" %}</h1>
+  <mark class="qw">você esta no account_signup</mark>
   
-  <p>Já tem uma conta? Faça o <a href="{{ login_url }}">Login</a>.</p>
+  <p class"qw">Já tem uma conta? Faça o <a href="{{ login_url }}">Login</a>.</p>
   
   <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
@@ -20,16 +139,15 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    <button type="submit" class"qw">{% trans "Sign Up" %} &raquo;</button>
   </form>
   
   <div class="socialaccount_ballot">
     <ul class="socialaccount_providers">
-      {% include "socialaccount/snippets/provider_list.html" with process="signup" %}
+      {% include "socialaccount/snippets/provider_list.html" with process="signin" %}
     </ul>
-  </div>
+  </div> {% endcomment %}
 </div>
-
 
 {% endblock content %}
 
