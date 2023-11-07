@@ -12,6 +12,12 @@
     background-size: cover;
  */ 
  /* Codigo */
+.conteudo{
+  position: fixed;
+  top: 15%;
+  width: 100%;
+}
+
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -26,8 +32,12 @@
 body {
   /* font-family: 'Source Sans Pro', sans-serif; */
   margin: 0;/**/
+  background-image: url(/static/img/login-cadastro/bg-01.jpg);
+  background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+  /*background-position: center;   /* Centraliza a imagem no fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
 }
-.navbar {
+.menu {
   position: fixed;
   top: 05%;
   left: 50%;
@@ -37,18 +47,18 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
 }
 
-.navbar:after {
+.menu:after {
   content: "";
   display: table;
   clear: both;
 }
-.navbar ul li {
+.menu ul li {
   font-family: 'Source Sans Pro';/**/
   list-style: none;
   display: inline-block;
   /* oveflow: hidden; */
 }
-.navbar ul li a {
+.menu ul li a {
   font-family: 'Source Sans Pro';/**/
   display: block;
   padding: 10px 40px;
@@ -62,28 +72,28 @@ body {
   text-align: center;
   transition-duration: 0.25s;
 }
-.navbar ul li a:hover {
+.menu ul li a:hover {
   color: white;
 }
-.navbar ul li.active a {
+.menu ul li.active a {
   color: white;
 }
-.navbar ul li:nth-child(1) a {
+.menu ul li:nth-child(1) a {
   background-color: #69AF23;
 }
-.navbar ul li:nth-child(2n) a {
+.menu ul li:nth-child(2n) a {
   background-color: #008737;
 }
-.navbar ul li:nth-child(3n) a {
+.menu ul li:nth-child(3n) a {
   background-color: #FFC300;
 }
-.navbar ul li:nth-child(4n) a {
+.menu ul li:nth-child(4n) a {
   background-color: #E62D87;
 }
-.navbar ul li:nth-child(5n) a {
+.menu ul li:nth-child(5n) a {
   background-color: #552382;
 }
-.navbar .dot {
+.menu .dot {
   background-color: red;
   width: 6px;
   height: 6px;

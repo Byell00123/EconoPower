@@ -6,70 +6,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block head_title %}EconoPower{% endblock head_title %}</title>
-    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/base/base.css' %}"> {% endcomment %}
-    {% block extra_head %}
-    {% endblock extra_head %}
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    
+    {% block head_title %}{% endblock head_title %}
+    
+    {% block extra_head %}<title>EconoPower</title>{% endblock extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base/base.css' %}"/>
 </head>
 <body>
+
 {% block body %}
-
-
-  {% if messages %}
-  <div>
-    <strong>{% trans "Messages:" %}</strong>
-    <ul>
-      {% for message in messages %}
-      <li>{{message}}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+<div class="menu">
   {% if user.is_authenticated %}
-  <nav>   <!--Mudar aqui depois-->
-    <div class="dot"></div>
-    <ul>
-      <li class="active"><a href="{% url 'pagina_home' %}">Inicio</a></li>
-      <li><a href="{% url 'account_email' %}">Mudar email</a></li>
-      <li><a href="{% url 'account_logout' %}">Sair</a></li>
-      <li><a href="#">More</a></li>
-    </ul>
-  </nav> <!-- ate aqui -->
-  
-
-  {% comment %} <ol>
-    <a href="{% url 'pagina_home' %}">{% trans "Home" %}</a>
-    <a href="{% url 'account_email' %}">Mudar email</a>
-    <a href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
-  </ol> {% endcomment %}
-  {% else %}
-  <nav>  
+    <nav>   <!--Mudar aqui depois-->
       <div class="dot"></div>
       <ul>
         <li class="active"><a href="{% url 'pagina_home' %}">Inicio</a></li>
-        <li><a href="{% url 'account_login' %}">Entrar</a></li>
-        <li><a href="{% url 'account_signup' %}">Cadastro</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="{% url 'account_email' %}">Mudar email</a></li>
+        <li><a href="{% url 'account_logout' %}">Sair</a></li>
         <li><a href="#">More</a></li>
       </ul>
+    </nav> <!-- ate aqui -->
+  
+
+  {% else %}
+  <nav>  
+    <div class="dot"></div>
+    <ul>
+      <li class="active"><a href="{% url 'pagina_home' %}">Inicio</a></li>
+      <li><a href="{% url 'account_login' %}">Entrar</a></li>
+      <li><a href="{% url 'account_signup' %}">Cadastro</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">More</a></li>
+    </ul>
   </nav>
-  {% comment %} <ol>
-    <a href="{% url 'pagina_home' %}">{% trans "Home" %}</a>
-    <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-    <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-  </ol> {% endcomment %}
+
   {% endif %}
 </div>
 <!-- partial -->
-
 <script src="{% static 'vendores/base/jquery.min.js' %}"></script>
 <script  src="{% static 'js/base.js' %}"></script>
-{% block content %}
-
-{% endblock content %}
 {% endblock body %}
+
+<div class="conteudo">
+{% block content %}
+{% endblock content %}
+</div>
+
 {% block extra_body %}
 {% endblock extra_body %}
+
 </body>
 </html>
 

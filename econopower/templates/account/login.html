@@ -1,10 +1,11 @@
-{% comment %} {% extends "account/base.html" %} {% endcomment %}
+{% extends "account/base.html" %}
 {% load static %}
 {% load i18n %}
 {% load account socialaccount %}
 
+{% block head_title %}
 <!--===============================================================================================-->
-<!--<link rel="icon" type="image/png" href="{% static '/favicon/login-cadastro/favicon.ico' %}"/>-->
+<!--<link rel="icon" type="image/png" href="{% static 'favicon/login-cadastro/favicon.ico' %}"/>-->
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="{% static 'vendores/login-cadastro/bootstrap/css/bootstrap.min.css' %}"/>
 <!--===============================================================================================-->
@@ -25,18 +26,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/util.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/login-cadastro/main.css' %}"/>
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="{% static 'css/base/base.css' %}"/>
+{% endblock head_title %}
+
 
 {% block content %}
-<div class="navbar">
-	{% include "account/base.html" %}
-</div>
 
 <div class="conteudo">
-
   <div class="limiter">
     {% get_providers as socialaccount_providers %}
-		<div class="container-login100" style="background-image: url('{% static "img/login-cadastro/bg-01.jpg" %}');">
+		<div class="container-login100">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="{% url 'account_login' %}">
 					{% csrf_token %}
@@ -88,10 +86,9 @@
 	</div>
 	
 
-
+</div>
 	<div id="dropDownSelect1"></div>
 
-</div>
 <!--===============================================================================================-->
 <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
