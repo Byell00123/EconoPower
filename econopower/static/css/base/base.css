@@ -52,13 +52,13 @@ body {
   display: table;
   clear: both;
 }
-.menu ul li {
+.menu #ul li {
   font-family: 'Source Sans Pro';/**/
   list-style: none;
   display: inline-block;
   /* oveflow: hidden; */
 }
-.menu ul li a {
+.menu #ul li a {
   font-family: 'Source Sans Pro';/**/
   display: block;
   padding: 10px 40px;
@@ -72,25 +72,25 @@ body {
   text-align: center;
   transition-duration: 0.25s;
 }
-.menu ul li a:hover {
+.menu #ul li a:hover {
   color: white;
 }
-.menu ul li.active a {
+.menu #ul li.active a {
   color: white;
 }
-.menu ul li:nth-child(1) a {
+.menu #ul li:nth-child(1) a {
   background-color: #69AF23;
 }
-.menu ul li:nth-child(2n) a {
+.menu #ul li:nth-child(2n) a {
   background-color: #008737;
 }
-.menu ul li:nth-child(3n) a {
+.menu #ul li:nth-child(3n) a {
   background-color: #FFC300;
 }
-.menu ul li:nth-child(4n) a {
+.menu #ul li:nth-child(4n) a {
   background-color: #E62D87;
 }
-.menu ul li:nth-child(5n) a {
+.menu #ul li:nth-child(5n) a {
   background-color: #552382;
 }
 .menu .dot {
