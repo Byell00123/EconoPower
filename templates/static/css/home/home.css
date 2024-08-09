@@ -1,0 +1,60 @@
+body{
+    background-image: url(/static/img/login-cadastro/bg-01.jpg);
+    background-size: cover; /* Faz com que a imagem cubra toda a área da tela */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Faz com que a imagem fique fixa enquanto você rola a página */
+    background-position: center; /* Centraliza a imagem */
+}
+.a {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+.a:focus {
+	outline: none !important;
+}
+.a:hover {
+	text-decoration: none;
+    color: #fc00ff;
+    border-color: #fc00ff;
+}
+.h1,.h2,.h3,.h4,.h5,.h6 {
+	margin: 0px;
+}
+
+.p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+.ul, .li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+@media (max-width: 768px) {
+.wrap-login100 {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+}
+
+@media (max-width: 576px) {
+    .wrap-login100 {
+        padding-left: 15px;
+        padding-right: 15px;
+}
+
+    .btn-face, .btn-google {
+        width: 100%;
+}
+}
